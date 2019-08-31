@@ -1,0 +1,18 @@
+.big-banner{
+    background-image: url('../images/bg1.jpg');
+    background-size: 100%;
+}
+
+.mobile-banner{
+    background-image: url('../images/mobile.jpg');
+    background-size: 100%;
+}
+
+.home-banner{
+    background-image: url('../images/awwward-cafe-coffee-21824.jpg');
+    background-size: 100%;      
+}
+
+.fresh-content{
+    background: linear-gradient(-45deg,#052525,#10a5e0);
+}
