@@ -41,18 +41,25 @@
 		return $row;
 	}
 	///
-	// function getStudent($idno){
-	// 	global $conn;
-	// 	$row;
-	// 	try{
-	// 		connect();
-	// 		$sql="SELECT * FROM student_tbl WHERE stud_idno=?";
-	// 		$stmt=$conn->prepare($sql);
-	// 		$stmt->execute(array($idno));
-	// 		$row=$stmt->fetch(PDO::FETCH_ASSOC);
-	// 	}catch(PDOException $e){ echo $e->getMessage();}
-	// 	return $row;
-	// }
+	function getStudent($idno, $passw){
+		global $conn;
+		$row;
+		try{
+			connect();
+			$sql="SELECT * FROM student_tbl WHERE stud_idno=? and stud_passw=?";
+			$stmt=$conn->prepare($sql);
+      $stmt->execute(array($idno, $passw));
+			// $row=$stmt->fetch(PDO::FETCH_ASSOC);
+			if($stmt->rowCount()){
+				$result = "true";
+			} else{
+				$result = "false";
+			}
+
+			echo $result;
+		}catch(PDOException $e){ echo $e->getMessage();}
+		// return $row;
+	}
 	///
 	// function deleteStudent($idno){
 	// 	global $conn;
